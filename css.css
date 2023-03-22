@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap');
+
+*{box-sizing: border-box; font-family: 'Poppins',sans-serif;}
+:root{
+  --trg : #111f21;
+}
+
+body{
+  background: #111718;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 97vh;
+}
+
+.wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.wheel{
+  display: flex;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: #3e3e3e;
+  box-shadow: inset 0 0 5px 3px #171010;
+  border: 5px solid #453d58;
+  transition: 5s ease-in-out;
+  overflow: hidden;
+}
+
+.wh{
+  position: relative;
+  margin-left: 73px;
+  margin-top: -5px;
+}
+
+.item,#arrow{
+  width: 0;
+	height: 0;
+	border-left: 75px solid transparent;
+	border-right: 75px solid transparent;
+	border-top: 150px solid var(--trg);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: 37px;
+  color: #c7af80;
+  position: absolute;
+}
+.item i{margin-bottom: 90px;}
+
+.item:nth-child(2){transform: rotate(53deg);  left: 62px; top: 30px;}
+.item:nth-child(3){transform: rotate(106deg);  left: 74px; top: 98px;}
+.item:nth-child(4){transform: rotate(159deg);  left: 26px; top: 148px;}
+.item:nth-child(5){transform: rotate(212deg);  left: -43px; top: 142px;}
+.item:nth-child(6){transform: rotate(265deg);  left: -80px; top: 84px;}
+.item:nth-child(7){transform: rotate(312.5deg);  left: -48px; top: 20px; border-left: 62px solid transparent; border-right: 62px solid transparent; border-top: 154px solid var(--trg);}
+
+
+
+
+#spin{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: #7d70e7;
+  color: #cdfff6;
+  font-family: 'Raleway';
+  font-weight: 500;
+  font-size: 14.5px;
+  letter-spacing: 0.08em;
+  padding: 5px 0 0 3.5px;
+  border: none;
+  transition: 0.2s ease;
+  cursor: pointer;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+#spin:hover{background: #6a5cd9;}
+
+
+#arrow{
+  border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 40px solid #7d70e7;
+  transform: rotate(180deg);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: -55px;
+  margin: auto;
+  z-index: 1;
+  transition: 0.2s ease;
+}
+#spin:hover #arrow{border-top: 40px solid #6a5cd9;}
+
+
+
+
+.winner{
+  animation: animate .85s alternate infinite ease-in-out;
+  color: #a04ce2;
+  text-shadow: 0 0 15px rgba(132, 57, 254, 0.49);
+}
+
+@keyframes animate {
+  from{transform: scale(1);}
+  to{transform: scale(0.87);}
+}
